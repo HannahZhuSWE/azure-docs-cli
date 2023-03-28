@@ -291,7 +291,6 @@ commands:
 - az_cli-translator
 - az_cloud
 - az_cloud-service
-- az_codespace
 - az_cognitiveservices
 - az_communication
 - az_confidentialledger
@@ -303,6 +302,7 @@ commands:
 - az_connectedvmware
 - az_consumption
 - az_container
+- az_containerapp
 - az_cosmosdb
 - az_costmanagement
 - az_csvmware
@@ -415,6 +415,7 @@ commands:
 - az_restore-point
 - az_role
 - az_sapmonitor
+- az_scvmm
 - az_search
 - az_security
 - az_self-test

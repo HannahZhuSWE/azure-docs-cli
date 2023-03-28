@@ -245,7 +245,7 @@ directCommands:
     description: ''
   - isRequired: true
     name: --permissions
-    summary: 'The permissions the SAS grants. Allowed values: (a)dd (c)reate (d)elete (l)ist (p)rocess (r)ead (u)pdate (w)rite (a)dd (c)reate (d)elete (l)ist (p)rocess (r)ead (u)pdate (w)rite. Can be combined.'
+    summary: 'The permissions the SAS grants. Allowed values: (a)dd (a)dd (c)reate (c)reate (d)elete (d)elete (l)ist (l)ist (p)rocess (p)rocess (r)ead (r)ead (u)pdate (u)pdate (w)rite (w)rite. Can be combined.'
     description: ''
   - isRequired: true
     name: --resource-types
@@ -388,7 +388,7 @@ directCommands:
   description: ''
   syntax: >-
     az storage account update --name
-                              [--access-tier {Cool, Hot}]
+                              [--access-tier {Cool, Hot, Premium}]
                               [--account-type {Computer, User}]
                               [--add]
                               [--allow-append {false, true}]
@@ -446,7 +446,7 @@ directCommands:
     description: ''
   optionalParameters:
   - name: --access-tier
-    parameterValueGroup: Cool, Hot
+    parameterValueGroup: Cool, Hot, Premium
     summary: The access tier used for billing StandardBlob accounts. Cannot be set for StandardLRS, StandardGRS, StandardRAGRS, or PremiumLRS account types. It is required for StandardBlob accounts during creation.
     description: ''
   - name: --account-type
@@ -668,5 +668,5 @@ globalParameters:
   summary: Increase logging verbosity. Use --debug for full debug logs.
 metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
-  ms.date: 02/25/2022
+  ms.date: 03/29/2022
   description: Manage storage accounts.

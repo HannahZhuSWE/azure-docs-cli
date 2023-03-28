@@ -1,17 +1,18 @@
 ---
-title: Azure CLI configuration options | Microsoft Docs
+title: The Azure CLI configuration options
 description: The Azure CLI allows user configuration for various settings. Manage values with the az configure command, environment variables, or in the configuration file.
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 08/01/2021 
+ms.date: 08/01/2021
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli, seo-azure-cli
 keywords: environment variables, configuration file, configuration settings, user configuration, azure cli variables, azure cli configuration, cli configuration
 ---
-# Azure CLI configuration
+
+# The Azure CLI configuration
 
 The Azure CLI allows for user configuration for settings such as logging, data collection, and default argument values. The CLI offers a convenience command for managing some defaults, `az config`. Other values can be set in a configuration file or with environment variables. This article provides further information on these user configuration settings and how to configure the Azure CLI.
 
@@ -34,7 +35,7 @@ The following table contains a list of available configuration keys.
 | defaults.group | The default resource group to use for all commands. |
 | defaults.location | The default location to use for all commands. |
 | defaults.web | The default app name to use for `az webapp` commands. |
-| defaults.vm | The default VM name to use for `az vm` commands. |
+| defaults.VM | The default VM name to use for `az vm` commands. |
 | defaults.vmss | The default virtual machine scale set (VMSS) name to use for  `az vmss` commands. |
 | defaults.acr | The default container registry name to use for `az acr` commands. |
 
@@ -46,20 +47,19 @@ az config set defaults.location=westus2 defaults.group=MyResourceGroup
 
 ## CLI configuration file
 
-The CLI configuration file contains other settings that are used for managing CLI behavior. The configuration file itself is located
-at `$AZURE_CONFIG_DIR/config`. The default value of `AZURE_CONFIG_DIR` is `$HOME/.azure` on Linux and macOS,
+The CLI configuration file contains other settings that are used for managing CLI behavior. The configuration file itself is located at `$AZURE_CONFIG_DIR/config`. The default value of `AZURE_CONFIG_DIR` is `$HOME/.azure` on Linux and macOS,
 and `%USERPROFILE%\.azure` on Windows.
 
 Configuration files are written in the INI file format. This file format is defined by section headers, followed by a list of key-value entries.
 
-* Section headers are written as `[section-name]`. Section names are case-sensitive.
-* Entries are written as `key=value`. Key names are not case-sensitive.
-* Comments are any line that begins with a `#` or `;`. Inline comments are not allowed.
+- Section headers are written as `[section-name]`. Section names are case-sensitive.
+- Entries are written as `key=value`. Key names are not case-sensitive.
+- Comments are any line that begins with a `#` or `;`. Inline comments are not allowed.
 
 Booleans are case-insensitive, and are represented by the following values.
 
-* __True__: `1`, `yes`, `true`, `on`
-* __False__: `0`, `no`, `false`, `off`
+- **True:** `1`, `yes`, `true`, `on`
+- **False:** `0`, `no`, `false`, `off`
 
 Here's an example of a CLI configuration file that disables any confirmation prompts and sets up logging to the `/var/log/azure` directory.
 
@@ -72,44 +72,42 @@ enable_log_file=yes
 log_dir=/var/log/azure
 ```
 
-See the next section for details on all of the available configuration values and what they mean. For the full details on the INI file format,
-see the [Python documentation on INI](https://docs.python.org/3/library/configparser.html#supported-ini-file-structure).
+See the next section for details on all of the available configuration values and what they mean. For the full details on the INI file format, see the [Python documentation on INI](https://docs.python.org/3/library/configparser.html#supported-ini-file-structure).
 
 ## CLI configuration values and environment variables
 
-The following table contains all of the sections and option names that can be placed in a configuration file. Their corresponding
-environment variables are set as `AZURE_{section}_{name}`, in all caps. For example, `output` default for `core` is set in the `AZURE_CORE_OUTPUT` variable, the `storage_account` default for `batchai` is set in the `AZURE_BATCHAI_STORAGE_ACCOUNT` variable, and the default `location` is set in the `AZURE_DEFAULTS_LOCATION` variable.
+The following table contains all of the sections and option names that can be placed in a configuration file. Their corresponding environment variables are set as `AZURE_{section}_{name}`, in all caps. For example, `output` default for `core` is set in the `AZURE_CORE_OUTPUT` variable, the `storage_account` default for `batchai` is set in the `AZURE_BATCHAI_STORAGE_ACCOUNT` variable, and the default `location` is set in the `AZURE_DEFAULTS_LOCATION` variable.
 
 When you provide a default value, that argument is no longer required by any command. Instead, the default value is used.
 
 | Section | Name      | Type | Description|
 |---------|-----------|------|------------|
-| __core__ | output | string | The default output format. Can be one of `json`, `jsonc`, `tsv`, or `table`. |
-| | disable\_confirm\_prompt | boolean | Turn confirmation prompts on/off. |
-| | collect\_telemetry | boolean | Allow Microsoft to collect anonymous data on the usage of the CLI. For privacy information, see the [Azure CLI MIT license](https://github.com/Azure/azure-cli/blob/dev/LICENSE). |
-| | only\_show\_errors | boolean | Only show errors during command invocation. In other words, only errors will be written to `stderr`. It suppresses warnings from preview, deprecated and experimental commands. It is also available for individual commands with the `--only-show-errors` parameter. |
-| | no\_color | boolean | Disable color. Originally colored messages will be prefixed with `DEBUG`, `INFO`, `WARNING` and `ERROR`. This bypasses the issue of a third-party library where the terminal's color cannot revert back after a `stdout` redirection. |
-| __logging__ | enable\_log\_file | boolean | Turn logging on/off. |
+| **core** | output | string | The default output format. Can be one of `json`, `jsonc`, `tsv`, or `table`. |
+| | disable\_confirm\_prompt | Boolean | Turn confirmation prompts on/off. |
+| | collect\_telemetry | Boolean | Allow Microsoft to collect anonymous data on the usage of the CLI. For privacy information, see the [Azure CLI MIT license](https://github.com/Azure/azure-cli/blob/dev/LICENSE). |
+| | only\_show\_errors | Boolean | Only show errors during command invocation. In other words, only errors will be written to `stderr`. It suppresses warnings from preview, deprecated and experimental commands. It is also available for individual commands with the `--only-show-errors` parameter. |
+| | no\_color | Boolean | Disable color. Originally colored messages will be prefixed with `DEBUG`, `INFO`, `WARNING` and `ERROR`. This bypasses the issue of a third-party library where the terminal's color cannot revert back after a `stdout` redirection. |
+| **logging** | enable\_log\_file | Boolean | Turn logging on/off. |
 | | log\_dir | string | The directory to write logs to. By default this value is `${AZURE_CONFIG_DIR}/logs*`. |
-| __defaults__ | group | string | The default resource group to use for all commands. |
+| **defaults** | group | string | The default resource group to use for all commands. |
 | | location | string | The default location to use for all commands. |
 | | web | string | The default app name to use for `az webapp` commands. |
-| | vm | string | The default VM name to use for `az vm` commands. |
+| | VM | string | The default VM name to use for `az vm` commands. |
 | | vmss | string | The default virtual machine scale set (VMSS) name to use for `az vmss` commands. |
 | | acr | string | The default container registry name to use for `az acr` commands. |
-| __storage__ | account | string | The default storage account name (e.g., **mystorageaccount** in https://mystorageaccount.blob.core.windows.net) to use for `az storage` data-plane commands (e.g., `az storage container list`). |
+| **storage** | account | string | The default storage account name (such as., **mystorageaccount** in https://mystorageaccount.blob.core.windows.NET) to use for `az storage` data-plane commands (such as., `az storage container list`). |
 | | key | string | The default access key to use for `az storage` data-plane commands. |
-| | sas\_token | string | The default SAS token to use for `az storage` data-plane commands. |
+| | SAS\_token | string | The default SAS token to use for `az storage` data-plane commands. |
 | | connection\_string | string | The default connection string to use for `az storage` data-plane commands. |
-| __batchai__ | storage\_account | string | The default storage account to use for `az batchai` commands. |
+| **batchai** | storage\_account | string | The default storage account to use for `az batchai` commands. |
 | | storage\_key | string | The default storage key to use for `az batchai` commands. |
-| __batch__ | account | string | The default Azure Batch account name to use for `az batch` commands. |
+| **batch** | account | string | The default Azure Batch account name to use for `az batch` commands. |
 | | access\_key | string | The default access key to use for `az batch` commands. Only used with `aad` authorization. |
 | | endpoint | string | The default endpoint to connect to for `az batch` commands. |
 | | auth\_mode | string | The authorization mode to use for `az batch` commands. Can be `shared_key` or `aad`. |
-| __cloud__ | name | string | The default cloud for all `az` commands.  The possible values are  `AzureCloud` (default), `AzureChinaCloud`, `AzureUSGovernment`, `AzureGermanCloud`. To change clouds, you can use the `az cloud set –name` command.  For an example, see [Manage Clouds with the Azure CLI](manage-clouds-azure-cli.md). |
-| __extension__ | use_dynamic_install | string | Install an extension if it's not added yet when running a command from it. The possible values are `no` (default), `yes_prompt`, `yes_without_prompt`. |
-| | run_after_dynamic_install | boolean | Continue to run the command when an extension is dynamically installed for it. Default is `False`. |
+| **cloud** | name | string | The default cloud for all `az` commands. The possible values are  `AzureCloud` (default), `AzureChinaCloud`, `AzureUSGovernment`, `AzureGermanCloud`. To change clouds, you can use the `az cloud set -name` command. For an example, see [Manage Clouds with the Azure CLI](manage-clouds-azure-cli.md). |
+| **extension** | use_dynamic_install | string | Install an extension if it's not added yet when running a command from it. The possible values are `no` (default), `yes_prompt`, `yes_without_prompt`. |
+| | run_after_dynamic_install | Boolean | Continue to run the command when an extension is dynamically installed for it. Default is `False`. |
 
 > [!NOTE]
 > You may see other values in your configuration file, but these are managed directly through CLI commands,
@@ -117,5 +115,5 @@ When you provide a default value, that argument is no longer required by any com
 
 ## See also
 
-- [How-to work with Azure CLI parameter persist](param-persist-howto.md)
-- [Tutorial: Use parameter persist with sequential Azure CLI commands](param-persist-tutorial.md)
+- [How-to work with the Azure CLI parameter persist](param-persist-howto.md)
+- [Tutorial: Use parameter persist with sequential the Azure CLI commands](param-persist-tutorial.md)

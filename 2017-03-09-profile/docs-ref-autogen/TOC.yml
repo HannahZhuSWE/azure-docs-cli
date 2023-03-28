@@ -410,6 +410,49 @@
         uid: az_connectedvmware_vm-template
         displayName: az connectedvmware vm-template
         items: []
+    - name: scvmm
+      items:
+      - name: Summary
+        uid: az_scvmm
+        displayName: az scvmm
+      - name: avset
+        uid: az_scvmm_avset
+        displayName: az scvmm avset
+        items: []
+      - name: cloud
+        uid: az_scvmm_cloud
+        displayName: az scvmm cloud
+        items: []
+      - name: virtual-network
+        uid: az_scvmm_virtual-network
+        displayName: az scvmm virtual-network
+        items: []
+      - name: vm
+        items:
+        - name: Summary
+          uid: az_scvmm_vm
+          displayName: az scvmm vm
+        - name: disk
+          uid: az_scvmm_vm_disk
+          displayName: az scvmm vm disk
+          items: []
+        - name: nic
+          uid: az_scvmm_vm_nic
+          displayName: az scvmm vm nic
+          items: []
+      - name: vmmserver
+        items:
+        - name: Summary
+          uid: az_scvmm_vmmserver
+          displayName: az scvmm vmmserver
+        - name: inventory-item
+          uid: az_scvmm_vmmserver_inventory-item
+          displayName: az scvmm vmmserver inventory-item
+          items: []
+      - name: vm-template
+        uid: az_scvmm_vm-template
+        displayName: az scvmm vm-template
+        items: []
   - name: Azure Artifacts
     items:
     - name: Summary
@@ -773,6 +816,58 @@
         uid: az_communication_sms
         displayName: az communication sms
         items: []
+  - name: Azure Container Apps
+    items:
+    - name: Summary
+      uid: sp-Azure_Container_Apps
+      displayName: Azure Container Apps
+    - name: containerapp
+      items:
+      - name: Summary
+        uid: az_containerapp
+        displayName: az containerapp
+      - name: dapr
+        uid: az_containerapp_dapr
+        displayName: az containerapp dapr
+        items: []
+      - name: env
+        items:
+        - name: Summary
+          uid: az_containerapp_env
+          displayName: az containerapp env
+        - name: dapr-component
+          uid: az_containerapp_env_dapr-component
+          displayName: az containerapp env dapr-component
+          items: []
+      - name: github-action
+        uid: az_containerapp_github-action
+        displayName: az containerapp github-action
+        items: []
+      - name: identity
+        uid: az_containerapp_identity
+        displayName: az containerapp identity
+        items: []
+      - name: ingress
+        items:
+        - name: Summary
+          uid: az_containerapp_ingress
+          displayName: az containerapp ingress
+        - name: traffic
+          uid: az_containerapp_ingress_traffic
+          displayName: az containerapp ingress traffic
+          items: []
+      - name: registry
+        uid: az_containerapp_registry
+        displayName: az containerapp registry
+        items: []
+      - name: revision
+        uid: az_containerapp_revision
+        displayName: az containerapp revision
+        items: []
+      - name: secret
+        uid: az_containerapp_secret
+        displayName: az containerapp secret
+        items: []
   - name: Azure Container Instances
     items:
     - name: Summary
@@ -993,6 +1088,10 @@
       - name: operation-result
         uid: az_kusto_operation-result
         displayName: az kusto operation-result
+        items: []
+      - name: operation-result-location
+        uid: az_kusto_operation-result-location
+        displayName: az kusto operation-result-location
         items: []
       - name: private-endpoint-connection
         uid: az_kusto_private-endpoint-connection
@@ -1257,6 +1356,10 @@
       - name: Summary
         uid: az_datamigration
         displayName: az datamigration
+      - name: sql-db
+        uid: az_datamigration_sql-db
+        displayName: az datamigration sql-db
+        items: []
       - name: sql-managed-instance
         uid: az_datamigration_sql-managed-instance
         displayName: az datamigration sql-managed-instance
@@ -1419,6 +1522,20 @@
       - name: Summary
         uid: az_dt
         displayName: az dt
+      - name: data-history
+        items:
+        - name: Summary
+          uid: az_dt_data-history
+          displayName: az dt data-history
+        - name: connection
+          items:
+          - name: Summary
+            uid: az_dt_data-history_connection
+            displayName: az dt data-history connection
+          - name: create
+            uid: az_dt_data-history_connection_create
+            displayName: az dt data-history connection create
+            items: []
       - name: endpoint
         items:
         - name: Summary
@@ -1806,6 +1923,23 @@
             uid: az_iot_central_device_command
             displayName: az iot central device command
             items: []
+          - name: edge
+            items:
+            - name: Summary
+              uid: az_iot_central_device_edge
+              displayName: az iot central device edge
+            - name: children
+              uid: az_iot_central_device_edge_children
+              displayName: az iot central device edge children
+              items: []
+            - name: manifest
+              uid: az_iot_central_device_edge_manifest
+              displayName: az iot central device edge manifest
+              items: []
+            - name: module
+              uid: az_iot_central_device_edge_module
+              displayName: az iot central device edge module
+              items: []
           - name: twin
             uid: az_iot_central_device_twin
             displayName: az iot central device twin
@@ -1874,9 +2008,14 @@
           displayName: az iot dps enrollment
           items: []
         - name: enrollment-group
-          uid: az_iot_dps_enrollment-group
-          displayName: az iot dps enrollment-group
-          items: []
+          items:
+          - name: Summary
+            uid: az_iot_dps_enrollment-group
+            displayName: az iot dps enrollment-group
+          - name: registration
+            uid: az_iot_dps_enrollment-group_registration
+            displayName: az iot dps enrollment-group registration
+            items: []
         - name: registration
           uid: az_iot_dps_registration
           displayName: az iot dps registration
@@ -2042,9 +2181,14 @@
         displayName: az aks maintenanceconfiguration
         items: []
       - name: nodepool
-        uid: az_aks_nodepool
-        displayName: az aks nodepool
-        items: []
+        items:
+        - name: Summary
+          uid: az_aks_nodepool
+          displayName: az aks nodepool
+        - name: snapshot
+          uid: az_aks_nodepool_snapshot
+          displayName: az aks nodepool snapshot
+          items: []
       - name: pod-identity
         items:
         - name: Summary
@@ -3001,19 +3145,9 @@
               displayName: az network manager security-admin-config rule-collection rule
               items: []
         - name: security-user-config
-          items:
-          - name: Summary
-            uid: az_network_manager_security-user-config
-            displayName: az network manager security-user-config
-          - name: rule-collection
-            items:
-            - name: Summary
-              uid: az_network_manager_security-user-config_rule-collection
-              displayName: az network manager security-user-config rule-collection
-            - name: rule
-              uid: az_network_manager_security-user-config_rule-collection_rule
-              displayName: az network manager security-user-config rule-collection rule
-              items: []
+          uid: az_network_manager_security-user-config
+          displayName: az network manager security-user-config
+          items: []
       - name: nic
         items:
         - name: Summary
@@ -4299,6 +4433,10 @@
       - name: Summary
         uid: az_sql
         displayName: az sql
+      - name: instance-failover-group-arc
+        uid: az_sql_instance-failover-group-arc
+        displayName: az sql instance-failover-group-arc
+        items: []
       - name: mi-arc
         items:
         - name: Summary
@@ -4307,10 +4445,6 @@
         - name: config
           uid: az_sql_mi-arc_config
           displayName: az sql mi-arc config
-          items: []
-        - name: dag
-          uid: az_sql_mi-arc_dag
-          displayName: az sql mi-arc dag
           items: []
         - name: endpoint
           uid: az_sql_mi-arc_endpoint
@@ -5124,11 +5258,11 @@
         uid: az_vmss_nic
         displayName: az vmss nic
         items: []
-  - name: Azure VMWare Solution
+  - name: Azure VMware Solution
     items:
     - name: Summary
-      uid: sp-Azure_VMWare_Solution
-      displayName: Azure VMWare Solution
+      uid: sp-Azure_VMware_Solution
+      displayName: Azure VMware Solution
     - name: csvmware
       items:
       - name: Summary
@@ -5642,26 +5776,4 @@
       - name: provider-instance
         uid: az_sapmonitor_provider-instance
         displayName: az sapmonitor provider-instance
-        items: []
-  - name: Visual Studio
-    items:
-    - name: Summary
-      uid: sp-Visual_Studio
-      displayName: Visual Studio
-    - name: codespace
-      items:
-      - name: Summary
-        uid: az_codespace
-        displayName: az codespace
-      - name: location
-        uid: az_codespace_location
-        displayName: az codespace location
-        items: []
-      - name: plan
-        uid: az_codespace_plan
-        displayName: az codespace plan
-        items: []
-      - name: secret
-        uid: az_codespace_secret
-        displayName: az codespace secret
         items: []

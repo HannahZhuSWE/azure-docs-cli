@@ -66,7 +66,7 @@ Command argument and behavior breaking changes are listed below.
 ## Known issues
 
 - Generic update arguments `--add`, `--set` and `--remove` currently don't work. You may use `az rest` to directly call Microsoft Graph API for non-supported properties.
-- Microsoft Graph related commands like `az ad` and `az role` will fail in Azure Stack environments which don't have Microsoft Graph support. Please use Azure CLI 3.36.0 or ealier versions for Azure Stack environments.
+- Microsoft Graph related commands like `az ad` and `az role` will fail in Azure Stack environments which don't have Microsoft Graph support. Please use Azure CLI 3.36.0 or earlier versions for Azure Stack environments.
 
 ## Try Azure CLI beta with Microsoft Graph
 
@@ -86,7 +86,7 @@ To avoid overwriting your installed Azure CLI, we recommend installing the beta 
 
 2. Activate the virtual environment
 
-   ### [Windows PowerShell](#tab/powershell)
+   ### [PowerShell](#tab/powershell)
 
    ```powershell
    . .\<env_name>\Scripts\Activate.ps1
@@ -126,7 +126,7 @@ To avoid overwriting your installed Azure CLI, we recommend installing the beta 
 
 To uninstall Azure CLI beta, delete the virtual environment folder.
 
-### [Windows PowerShell](#tab/powershell)
+### [PowerShell](#tab/powershell)
 
 ```powershell
 Remove-Item -Force -Recurse <env_name>
