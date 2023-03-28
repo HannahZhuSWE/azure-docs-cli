@@ -1,5 +1,5 @@
 ---
-title: Alias extension - Azure CLI | Microsoft Docs
+title: Alias extension - the Azure CLI
 description: The alias extension allows users to define custom commands for the Azure CLI by using existing commands. Learn how to use the Azure CLI alias extension.
 author: dbradish-microsoft
 ms.author: dbradish
@@ -21,7 +21,7 @@ The alias extension allows users to define custom commands for the Azure CLI by 
 
 ## Install the alias extension
 
-The minimum required Azure CLI version to use the alias extension is **2.0.28**. To check your CLI version, run `az --version`. If you need to update your installation,  follow the instructions in [Install the Azure CLI](./install-azure-cli.md).
+The minimum required the Azure CLI version to use the alias extension is **2.0.28**. To check your CLI version, run `az --version`. If you need to update your installation,  follow the instructions in [Install the Azure CLI](./install-azure-cli.md).
 
 Install the alias extension with the [az extension add](/cli/azure/extension#az_extension_add) command.
 
@@ -135,7 +135,7 @@ az alias create \
         --container-name {{ url.replace('https://', '').split('/')[1] }}"
 ```
 
-To learn about the Jinja2 template engine, see [the Jinja2 documentation](http://jinja.pocoo.org/docs/2.10/templates/).
+To learn about the Jinja2 template engine, see the [Jinja2 documentation](http://jinja.pocoo.org/docs/2.10/templates/).
 
 ## Alias configuration file
 
@@ -155,8 +155,7 @@ command = invoked_commands_including_args
 
 ## Create an alias command with arguments via the alias configuration file
 
-The next example shows an alias for a command with arguments. This command gets the public IP address for a VM. Aliased commands must all be on a single line, and use
-all of the arguments in the alias name.
+The next example shows an alias for a command with arguments. This command gets the public IP address for a VM. Aliased commands must all be on a single line, and use all of the arguments in the alias name.
 
 ```ini
 [get-vm-ip {{ resourceGroup }} {{ vmName }}]
